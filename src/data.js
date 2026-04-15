@@ -5,7 +5,7 @@ export const personal = {
   email: "vbadeti4@gmail.com",
   phone: "(414) 534-9599",
   location: "Milwaukee, WI",
-  linkedin: "https://linkedin.com/in/venkata-ramana-18b9b7344",
+  linkedin: "https://www.linkedin.com/in/ramana-badeti-5b617b197/",
   github: "https://github.com/Ramanabadeti",
   summary:
     "Full-Stack Developer with 3+ years of professional experience building responsive, production-grade web applications. MS in Information Technology from the University of Wisconsin Milwaukee. Specialized in React.js ecosystems, Node.js APIs, real-time systems with Socket.io, and AI-powered tools using Claude API.",
