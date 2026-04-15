@@ -90,7 +90,7 @@ export default function Hero() {
           <div className="hero-photo-wrap">
             <div className="hero-photo-ring" />
             <div className="hero-photo">
-              <img src="/avatar.svg" alt="Venkata Ramana Badeti" />
+              <img src="/image.svg" alt="Venkata Ramana Badeti" />
             </div>
 
             <div className="hero-stats hero-stats-left">
