@@ -18,6 +18,7 @@ export default function App() {
       const doc = document.documentElement;
       const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
       setScrollPct(Math.min(pct, 100));
+      doc.style.setProperty('--scroll-y', doc.scrollTop);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 

@@ -1,7 +1,7 @@
 import { experience, education } from '../data';
 
 function TimelineItem({ item, type }) {
-  const dotColor = item.color || 'var(--purple)';
+  const dotColor = item.color || 'var(--accent)';
   return (
     <div className="timeline-item reveal">
       <div className="timeline-dot" style={{ background: dotColor, color: dotColor }} />

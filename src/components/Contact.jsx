@@ -20,7 +20,7 @@ export default function Contact() {
       icon: '📧', label: 'Email',
       content: personal.email,
       href: `mailto:${personal.email}`,
-      bg: 'rgba(139,92,246,0.12)',
+      bg: 'rgba(37,99,235,0.12)',
     },
     {
       icon: '📱', label: 'Phone',

@@ -3,32 +3,32 @@ import { skills } from '../data';
 
 const categories = [
   {
-    key: 'frontend',
-    title: 'Frontend',
-    icon: '🎨',
-    iconBg: 'rgba(139,92,246,0.15)',
-    barGrad: 'linear-gradient(90deg, #8b5cf6, #a78bfa)',
+    key: 'cloud',
+    title: 'Cloud & Infrastructure',
+    icon: '☁️',
+    iconBg: 'rgba(6,182,212,0.15)',
+    barGrad: 'linear-gradient(90deg, #06b6d4, #22d3ee)',
   },
   {
     key: 'backend',
     title: 'Backend & APIs',
     icon: '⚙️',
-    iconBg: 'rgba(6,182,212,0.15)',
-    barGrad: 'linear-gradient(90deg, #06b6d4, #22d3ee)',
+    iconBg: 'rgba(16,185,129,0.15)',
+    barGrad: 'linear-gradient(90deg, #10b981, #34d399)',
   },
   {
-    key: 'database',
-    title: 'Database & Storage',
-    icon: '🗄️',
-    iconBg: 'rgba(245,158,11,0.15)',
-    barGrad: 'linear-gradient(90deg, #f59e0b, #fbbf24)',
+    key: 'frontend',
+    title: 'Frontend',
+    icon: '🎨',
+    iconBg: 'rgba(37,99,235,0.15)',
+    barGrad: 'linear-gradient(90deg, #8b5cf6, #a78bfa)',
   },
   {
     key: 'tools',
     title: 'Tools & Practices',
     icon: '🛠️',
-    iconBg: 'rgba(16,185,129,0.15)',
-    barGrad: 'linear-gradient(90deg, #10b981, #34d399)',
+    iconBg: 'rgba(245,158,11,0.15)',
+    barGrad: 'linear-gradient(90deg, #f59e0b, #fbbf24)',
   },
 ];
 

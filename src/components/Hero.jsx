@@ -1,5 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { personal } from '../data';
+import VoiceIntro from './VoiceIntro';
+
+const InfraScene = lazy(() => import('./InfraScene'));
 
 const ROLES = personal.roles;
 
@@ -7,6 +10,8 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [deleting, setDeleting] = useState(false);
+  const [voicePlaying, setVoicePlaying] = useState(false);
+  const handleVoicePlayingChange = useCallback(setVoicePlaying, []);
 
   useEffect(() => {
     const target = ROLES[roleIdx];
@@ -33,6 +38,9 @@ export default function Hero() {
         <div className="orb orb-2" />
         <div className="orb orb-3" />
         <div className="orb orb-4" />
+        <Suspense fallback={null}>
+          <InfraScene />
+        </Suspense>
       </div>
 
       <div className="hero-inner">
@@ -50,10 +58,10 @@ export default function Hero() {
           </div>
 
           <p className="hero-desc">
-            Full-Stack Developer with <strong>3+ years</strong> of professional experience.
-            MS in Information Technology from <strong>UW Milwaukee</strong>.
-            I build production-grade web apps with React, Node.js, and AI integrations
-            that solve real problems.
+            Cloud Engineer with <strong>2+ years</strong> of professional experience across
+            AWS, Azure, and Terraform. MS in Information Technology from <strong>UW Milwaukee</strong>.
+            AWS &amp; Terraform certified, with hands-on Kubernetes and CI/CD experience,
+            plus a builder's track record shipping AI-integrated tools end-to-end.
           </p>
 
           <div className="hero-actions">
@@ -87,20 +95,24 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual">
-          <div className="hero-photo-wrap">
+          <div className={`hero-photo-wrap ${voicePlaying ? 'voice-active' : ''}`}>
             <div className="hero-photo-ring" />
             <div className="hero-photo">
               <img src="/image.png" alt="Venkata Ramana Badeti" />
             </div>
 
+            <div className="hero-voice-intro">
+              <VoiceIntro onPlayingChange={handleVoicePlayingChange} />
+            </div>
+
             <div className="hero-stats hero-stats-left">
               <div className="hero-stat-card">
-                <div className="num">3+</div>
+                <div className="num">2+</div>
                 <div className="lbl">Years Exp</div>
               </div>
               <div className="hero-stat-card">
-                <div className="num">7+</div>
-                <div className="lbl">Projects</div>
+                <div className="num">3</div>
+                <div className="lbl">Cloud Certs</div>
               </div>
             </div>
 
@@ -110,8 +122,8 @@ export default function Hero() {
                 <div className="lbl">Degree</div>
               </div>
               <div className="hero-stat-card">
-                <div className="num">3.55</div>
-                <div className="lbl">GPA</div>
+                <div className="num">8+</div>
+                <div className="lbl">Projects</div>
               </div>
             </div>
           </div>

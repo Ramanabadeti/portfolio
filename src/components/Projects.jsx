@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { projects } from '../data';
 
 const icons = {
@@ -10,8 +11,30 @@ const icons = {
 };
 
 function ProjectCard({ p, featured }) {
+  const cardRef = useRef(null);
+
+  function handleMouseMove(e) {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    const rotateX = (0.5 - py) * 10;
+    const rotateY = (px - 0.5) * 10;
+    el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+  }
+
+  function handleMouseLeave() {
+    if (cardRef.current) cardRef.current.style.transform = '';
+  }
+
   return (
-    <div className={`project-card ${featured ? 'project-card-featured' : ''} reveal`}>
+    <div
+      ref={cardRef}
+      className={`project-card ${featured ? 'project-card-featured' : ''} reveal`}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <div
         className="project-badge"
         style={{
