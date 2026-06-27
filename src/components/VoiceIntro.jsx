@@ -26,7 +26,7 @@ export default function VoiceIntro({ onPlayingChange }) {
 
   return (
     <button type="button" className={`voice-intro-btn ${playing ? 'is-playing' : ''}`} onClick={togglePlay}>
-      <audio ref={audioRef} src="/voice-intro.m4a" onEnded={() => setPlaying(false)} preload="none" />
+      <audio ref={audioRef} src="/voice-intro.mp3" onEnded={() => setPlaying(false)} preload="none" />
       <span className="voice-intro-waveform" aria-hidden="true">
         {Array.from({ length: BAR_COUNT }).map((_, i) => (
           <span key={i} className="voice-intro-bar" style={{ animationDelay: `${i * 0.12}s` }} />
